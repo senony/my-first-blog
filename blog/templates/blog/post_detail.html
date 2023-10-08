@@ -15,6 +15,8 @@
         {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
+        <!-- intruder image -->
+        <img src="{{ post.image.url }}" class="rounded intruder-image-list" alt="{{ post.title }}">
         <hr>
             <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
             {% for comment in post.comments.all %}
